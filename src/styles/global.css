@@ -1,0 +1,19 @@
+.parents, .children{
+    display: flex;
+    justify-content: center;
+}
+
+.children{
+    padding-top: 60px;
+    flex-wrap: nowrap;
+}
+
+.children .person-tile{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.parents{
+    flex-direction: column;
+    align-items: center;
+}
