@@ -17,10 +17,10 @@ export const FamilyTree: React.FC = () => {
         spouse?: IpeopleData,
         ancestor?: boolean
     }
-
+    
     useEffect(() => {
-        setPeopleData(personLists(familyTree))
-    }, []);
+        setPeopleData(personLists(DATA));
+    },[]);
 
     const personLists = (data: IpeopleData[]):IpeopleData[] => {
         let foundSpouseList: number[]  = [];
