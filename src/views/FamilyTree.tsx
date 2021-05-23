@@ -17,10 +17,10 @@ export const FamilyTree: React.FC = () => {
         spouse?: IpeopleData,
         ancestor?: boolean
     }
-
+    
     useEffect(() => {
-        setPeopleData(personLists(familyTree))
-    }, []);
+        setPeopleData(personLists(DATA));
+    },[]);
 
     const personLists = (data: IpeopleData[]):IpeopleData[] => {
         let foundSpouseList: number[]  = [];
@@ -66,7 +66,7 @@ export const FamilyTree: React.FC = () => {
         let {name, gender, children, spouse} = data
         
         return(
-            <div>
+            <div className="tree-node">
                 <div className='parents'>
                     
                 <Person name={name} gender={gender}/>
@@ -81,7 +81,7 @@ export const FamilyTree: React.FC = () => {
                         if(child){
                             let childData = findPerson(child,peopleData);
                             return(
-                                childData ? <TreeNode key={`${child}`} data={childData}/> : <div key={`${child}`}></div>
+                                childData ? <TreeNode key={`${child}`} data={childData}/> : <React.Fragment key={`${child}`}></React.Fragment>
                             )
                         }
                         
@@ -108,12 +108,12 @@ export const FamilyTree: React.FC = () => {
     }
 
     return(
-        <div>
+        <div className="family-tree">
             {
                 peopleData.map((parentPeople, i) => {
                     return(
                         
-                        parentPeople.ancestor ? <TreeNode key={`TreeNode-${i}`} data={parentPeople} /> : <div key={`TreeNode-${i}`}></div>
+                        parentPeople.ancestor ? <TreeNode key={`TreeNode-${i}`} data={parentPeople} /> : <React.Fragment key={`TreeNode-${i}`}></React.Fragment>
                     )
                 })
             }

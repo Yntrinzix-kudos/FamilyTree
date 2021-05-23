@@ -49,6 +49,30 @@ const familyTree = [
 		children: [],
 		parents: [1231239887112, 2351232112252],
 	},
+
+	{
+		id: 1111,
+		name: "JM",
+		gender: "male",
+		children: [3333],
+		parents: [],
+	},
+
+	{
+		id: 2222,
+		name: "Jessa",
+		gender: "female",
+		children: [3333],
+		parents: [],
+	},
+
+	{
+		id: 3333,
+		name: "Solomon",
+		gender: "male",
+		children: [],
+		parents: [1111, 222],
+	},
 ];
 
 

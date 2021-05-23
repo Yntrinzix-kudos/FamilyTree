@@ -1,3 +1,17 @@
+.family-tree{
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 60px;
+}
+
+.tree-node{
+    padding: 30px 100px
+}
+
+.tree-node .tree-node{
+    padding: 0;
+}
+
 .parents, .children{
     display: flex;
     justify-content: center;
